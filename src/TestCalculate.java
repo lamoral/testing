@@ -14,7 +14,7 @@ public class TestCalculate {
         Assert.assertEquals(expected,actual);
     }
 
-    @Ignore
+    @Test
     public void testDiff(){
         System.out.println("Method associated with testDiff");
         Calculate calc = new Calculate();
@@ -23,6 +23,24 @@ public class TestCalculate {
         int expected= -1;
         int actual= calc.diff(a,b);
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDiv(){
+        Calculate calc = new Calculate();
+        int a= 4;
+        int b= 2;
+        int expected= 2;
+        int actual= calc.divide(a,b);
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test (expected = ArithmeticException.class)
+    public void testDivZero(){
+        Calculate calc = new Calculate();
+        int a= 4;
+        int b= 0;
+        int actual = calc.divide(a,b);
     }
 
     @Before
